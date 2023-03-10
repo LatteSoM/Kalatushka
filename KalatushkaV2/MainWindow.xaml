@@ -1,0 +1,50 @@
+﻿<Window x:Class="KalatushkaV2.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KalatushkaV2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="640" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Button Name="file" Grid.ColumnSpan="8" Grid.Row="0" Style="{StaticResource MaterialDesignRaisedDarkButton}" Content="File" Click="file_Click" />
+        <TextBlock Text="Your Playlist" Grid.ColumnSpan="2" Grid.Column="2" Grid.Row="1" Width="200" Height="50" FontSize="33"/>
+        <TextBlock x:Name="end" Text="end" Grid.Column="6" Grid.Row="8" FontSize="20" TextAlignment="Right"/>
+        <TextBlock x:Name="strt" Text="strt" Grid.Column="1" Grid.Row="8" FontSize="20" TextAlignment="Left"/>
+        <ListBox Name="spisok" Grid.ColumnSpan="6" Grid.Column="1" Grid.Row="2" Grid.RowSpan="4" SelectionChanged="spisok_SelectionChanged"></ListBox>
+        <Slider Name="slider" Minimum="0" Maximum="50" Value="35" Grid.ColumnSpan="6" Grid.Column="1" Grid.Row="7" ValueChanged="slider_ValueChanged"/>
+        <Slider Name="volume" Minimum="0" Maximum="50" Value="35" Grid.Column="6" Grid.Row="9" ValueChanged="volume_ValueChanged"/>
+        <Button Name="playPause" Grid.Column="3" Grid.Row="9" Height="50" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}" Content="Play" Click="playPause_Click" />
+        <Button Name="next" Grid.Column="4" Grid.Row="9"  Height="50" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}" Content="next" Click="next_Click" />
+        <Button Name="back"  Grid.Column="2" Grid.Row="9" Height="50" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}" Content="Back" Click="back_Click" />
+        <Button Name="rep" Grid.Column="1" Grid.Row="9" Height="50" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}" Content="rep" Click="rep_Click" />
+        <Button Name="rnd" Grid.Column="5" Grid.Row="9" Height="50" Width="100" Style="{StaticResource MaterialDesignRaisedDarkButton}" Content="rnd" Click="rnd_Click" />
+
+        <MediaElement x:Name="media" LoadedBehavior="Manual" MediaOpened="media_MediaOpened"/>
+
+    </Grid>
+</Window>
